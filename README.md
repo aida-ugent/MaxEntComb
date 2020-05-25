@@ -92,35 +92,37 @@ An example of running the Matlab MaxEnt version:
 ## Reproducing Experiments
 In order to reproduce the experiments presented in the paper the following steps are necessary:
 
-1) Download and install the EvalNE library as instructed [here](https://github.com/Dru-Mara/EvalNE)
-2) Download and install the MaxEnt method as shown in the [Installation](#Installation) section above
-3) Download and install the baseline methods. We recommend that each method is installed in 
+1. Download and install the EvalNE library as instructed [here](https://github.com/Dru-Mara/EvalNE)
+2. Download and install the MaxEnt method as shown in the [Installation](#Installation) section above
+3. Download and install the baseline methods. We recommend that each method is installed in 
 a unique virtual environment to ensure that the right dependencies are used. For all methods except SDNE, we use the
 implementations provided by the original authors: 
  
     * [Deepwalk](https://github.com/phanein/deepwalk),
-[Node2vec](https://github.com/aditya-grover/node2vec),
-[LINE](https://github.com/tangjianpku/LINE),
-[Struc2vec](https://github.com/leoribeiro/struc2vec),
-[AROPE](https://github.com/ZW-ZHANG/AROPE),
-[CNE](https://bitbucket.org/ghentdatascience/cne/).
+    * [Node2vec](https://github.com/aditya-grover/node2vec),
+    * [LINE](https://github.com/tangjianpku/LINE),
+    * [Struc2vec](https://github.com/leoribeiro/struc2vec),
+    * [AROPE](https://github.com/ZW-ZHANG/AROPE),
+    * [CNE](https://bitbucket.org/ghentdatascience/cne/).
 
     For SDNE the implementation available [here](https://github.com/palash1992/GEM) 
 is the only one which has shown similar results to those in the original paper.
 
-4) Download the datasets: 
+4. Download the datasets: 
 
     * [StudentDB](http://adrem.ua.ac.be/smurfig), 
-[Facebook](https://snap.stanford.edu/data/egonets-Facebook.html), 
-[BlogCatalog](http://socialcomputing.asu.edu/datasets/BlogCatalog3), 
-[Flickr](http://socialcomputing.asu.edu/datasets/Flickr),
-[YouTube](http://socialcomputing.asu.edu/datasets/YouTube2),
-[GR-QC](https://snap.stanford.edu/data/ca-GrQc.html),
-[DBLP](https://snap.stanford.edu/data/com-DBLP.html),
-[PPI](http://snap.stanford.edu/node2vec/#datasets) and
-[Wikipedia](http://snap.stanford.edu/node2vec/#datasets)
-5) Download the `.ini` configuration files from the `/experiments` folder. Modify the *dataset* paths and *method* paths to
+    * [Facebook](https://snap.stanford.edu/data/egonets-Facebook.html), 
+    * [BlogCatalog](http://socialcomputing.asu.edu/datasets/BlogCatalog3), 
+    * [Flickr](http://socialcomputing.asu.edu/datasets/Flickr),
+    * [YouTube](http://socialcomputing.asu.edu/datasets/YouTube2),
+    * [GR-QC](https://snap.stanford.edu/data/ca-GrQc.html),
+    * [DBLP](https://snap.stanford.edu/data/com-DBLP.html),
+    * [PPI](http://snap.stanford.edu/node2vec/#datasets) and
+    * [Wikipedia](http://snap.stanford.edu/node2vec/#datasets).
+
+5. Download the `.ini` configuration files from the `/experiments` folder. Modify the *dataset* paths and *method* paths to
 match the respective installation directories and run each files as:
+
     ```bash
     python -m evalne ./experiments/conf_maxent.ini
     ```
