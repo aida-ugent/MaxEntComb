@@ -1,0 +1,34 @@
+function [obj,G,H] = objectiveAll(x, M, du, F, c_F, nF)
+% Gradient and Hessian of the reduced Lagrange function, with a prior on
+% binned F values.
+
+n = length(M); % reduced model length
+
+s = cellfun(@times,F,num2cell(x(end-nF+1:end)'),'uni',false); % multiplying F's by their lambda
+s = sum(cat(3,s{:}),3); % summing over all F's
+
+
+A = x(1:n)+x(n+1:2*n)'+s;
+A1 = exp(A);
+obj = log(1+A1);
+ind = isinf(obj); 
+obj(ind) = A(ind); % replacing overflow by its original values.
+obj = M.*obj;
+obj = sum(sum(obj)) - x(end-nF+1:end)'*c_F - x(1:n)'*du - x(n+1:2*n)'*du;
+
+A = (A1./(1+A1));
+A(isnan(A))=1; % replacing overflows by probability 1.
+A = M.*A;
+% Gradient
+G = [sum(A,2)- du; sum(A,1)' - du; cellfun(@(x)sum(sum(x.*A)),F)' - c_F];
+
+if nargout > 2
+    A = A./(1+A1);
+    C = cellfun(@(x) x.*A, F, 'uni', false);
+    C_f = cellfun(@(x,y) x.*y, F',C,'uni',false);
+    B1 = cell2mat(cellfun(@(x)sum(x,2),C,'uni', false));
+    B2 = cell2mat(cellfun(@(x)sum(x,1)',C,'uni', false));
+    C_F = 
+    H = [diag(sum(A,2)) A B1; A' diag(sum(A,1)) B2; ...
+        B1' B2'; ];    
+end
