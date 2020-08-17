@@ -1,7 +1,7 @@
-# Scalable graph inference using maximum entropy models with structural constraints
+# Block-Approximated Exponential Random Graphs
 
 This repository contains the source code, installation and use instructions for the methods presented in the paper: 
-*Scalable maximum entropy models on graphs with structural constraints*. Instructions for replicating 
+*Block-Approximated Exponetial Random Graphs*. Instructions for replicating 
 the experiments in the paper are also given.
 
 We provide two different implementations, a Python version for the MaxEnt model with full structural constraints and
