@@ -131,3 +131,18 @@ match the respective installation directories and run each files as:
 is also available in the `/experiments` folder.
 
 
+## Citation ##
+
+If you have found our research useful, please consider citing our 
+[arXiv paper](https://arxiv.org/abs/2002.07076):
+
+```
+@misc{adriaens2020blockapproximated,
+    title={Block-Approximated Exponential Random Graphs}, 
+    author={Florian Adriaens and Alexandru Mara and Jefrey Lijffijt and Tijl De Bie},
+    year={2020},
+    eprint={2002.07076},
+    archivePrefix={arXiv},
+    primaryClass={cs.SI}
+}
+```
