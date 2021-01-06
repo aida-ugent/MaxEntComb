@@ -133,16 +133,17 @@ is also available in the `/experiments` folder.
 
 ## Citation ##
 
-If you have found our research useful, please consider citing our 
-[arXiv paper](https://arxiv.org/abs/2002.07076):
+If you have found our research useful, please consider citing our paper, which is also available on
+[arxiv](https://arxiv.org/abs/2002.07076):
 
 ```
-@misc{adriaens2020blockapproximated,
-    title={Block-Approximated Exponential Random Graphs}, 
-    author={Florian Adriaens and Alexandru Mara and Jefrey Lijffijt and Tijl De Bie},
-    year={2020},
-    eprint={2002.07076},
-    archivePrefix={arXiv},
-    primaryClass={cs.SI}
-}
+@INPROCEEDINGS{9260034,
+  author={F. {Adriaens} and A. {Mara} and J. {Lijffijt} and T. {De Bie}},
+  booktitle={2020 IEEE 7th International Conference on Data Science and Advanced Analytics (DSAA)}, 
+  title={Block-Approximated Exponential Random Graphs}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={70-80},
+  doi={10.1109/DSAA49011.2020.00019}}
 ```
