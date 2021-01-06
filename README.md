@@ -133,8 +133,8 @@ is also available in the `/experiments` folder.
 
 ## Citation ##
 
-If you have found our research useful, please consider citing our paper, which is also available on
-[arxiv](https://arxiv.org/abs/2002.07076):
+If you have found our research useful, please consider citing our [paper](https://ieeexplore.ieee.org/document/9260034), 
+which is also available on [arxiv](https://arxiv.org/abs/2002.07076):
 
 ```
 @INPROCEEDINGS{9260034,
