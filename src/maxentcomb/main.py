@@ -69,7 +69,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def main(args):
+def main_helper(args):
     """ Main of Maxent Combined. """
 
     # Load edgelist
@@ -111,6 +111,10 @@ def main(args):
     print('Prediction time: {}'.format(time.time()-start))
 
 
-if __name__ == "__main__":
+def main():
     args = parse_args()
-    main(args)
+    main_helper(args)
+
+
+if __name__ == "__main__":
+    main()

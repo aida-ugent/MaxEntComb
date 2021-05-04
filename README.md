@@ -9,16 +9,21 @@ a Matlab version for the MaxEnt using low rank approximations.
 
 ## Installation
 
-The requirements for the Python MaxEnt version are:
+The Python portion of this repository can be installed directly from GitHub with:
 
-```text
-networkx==2.2
-numpy==1.15.1
-scikit-learn==0.20.4
-scipy==1.2.2
-sklearn
-tqdm
+```shell
+$ pip install git+https://github.com/aida-ugent/MaxEntComb.git
 ```
+
+It can be installed from the source with:
+
+```shell
+$ git clone https://github.com/aida-ugent/MaxEntComb.git
+$ cd MaxEntComb
+$ pip install -e .
+```
+
+Where `-e` means "editable" mode.
 
 The MaxEnt Matlab version using low rank approximations requires `Matlab R2018b` or higher. The code also uses the open
 source [minFunc](https://www.cs.ubc.ca/~schmidtm/Software/minFunc.html) package for unconstrained differentiable 
@@ -27,7 +32,7 @@ multivariate optimization by M. Schmidt. For convenience, this packages is alrea
 ## Usage
 
 ### Running MaxEnt Python:
-A `main.py` file is provided which parses the command line arguments and runs the model. The file takes the following
+A `maxentcomb` CLI command is added on `pip install` which runs the model. The file takes the following
 parameters:
 ```text
   -h, --help                Show this help message and exit.
@@ -58,9 +63,9 @@ in the `weighted_lin_constr.py` file.
 Examples of running the Python MaxEnt model are:
 ```bash
 # Example 1: Outputs posterior matrix after calculation
-python main.py --inputgraph ./graph.edgelist --prior 'CN' 'PA' --optimizer 'newton'
+maxentcomb --inputgraph ./graph.edgelist --prior 'CN' 'PA' --optimizer 'newton'
 # Example 2: Outputs predictions for the edge pairs in the tr_e and te_e files
-python main.py --inputgraph ./graph.edgelist --tr_e ./tr.edgelist --te_e ./te.edgelist --tr_pred './tr.out' --te_pred './te.out'
+maxentcomb --inputgraph ./graph.edgelist --tr_e ./tr.edgelist --te_e ./te.edgelist --tr_pred './tr.out' --te_pred './te.out'
 ```
 
 ### Running MaxEnt Matlab:
@@ -136,14 +141,12 @@ is also available in the `/experiments` folder.
 If you have found our research useful, please consider citing our [paper](https://ieeexplore.ieee.org/document/9260034), 
 which is also available on [arxiv](https://arxiv.org/abs/2002.07076):
 
-```
+```bibtex
 @INPROCEEDINGS{9260034,
   author={F. {Adriaens} and A. {Mara} and J. {Lijffijt} and T. {De Bie}},
   booktitle={2020 IEEE 7th International Conference on Data Science and Advanced Analytics (DSAA)}, 
   title={Block-Approximated Exponential Random Graphs}, 
   year={2020},
-  volume={},
-  number={},
   pages={70-80},
   doi={10.1109/DSAA49011.2020.00019}}
 ```
