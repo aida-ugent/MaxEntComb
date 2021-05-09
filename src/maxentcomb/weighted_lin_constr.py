@@ -123,7 +123,7 @@ class WeightLinConstrOn:
         """ Returns the sum of an element-wise multiplication between F and mat. """
 
 
-class CommonNeighOn(object, WeightLinConstrOn):
+class CommonNeighOn(WeightLinConstrOn):
 
     def __init__(self, A):
         if not issparse(A):

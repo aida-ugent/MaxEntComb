@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-"""Maximum Entropy Combination Model."""
+"""MaxEnt Combined Model."""

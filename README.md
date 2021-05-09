@@ -9,13 +9,13 @@ a Matlab version for the MaxEnt using low rank approximations.
 
 ## Installation
 
-The Python portion of this repository can be installed directly from GitHub with:
+The Python version of MaxEnt can be installed directly from GitHub with:
 
 ```shell
 $ pip install git+https://github.com/aida-ugent/MaxEntComb.git
 ```
 
-It can be installed from the source with:
+It can be also installed from source with:
 
 ```shell
 $ git clone https://github.com/aida-ugent/MaxEntComb.git
@@ -29,10 +29,14 @@ The MaxEnt Matlab version using low rank approximations requires `Matlab R2018b`
 source [minFunc](https://www.cs.ubc.ca/~schmidtm/Software/minFunc.html) package for unconstrained differentiable 
 multivariate optimization by M. Schmidt. For convenience, this packages is already included in the `/matlab` folder.
 
+**Note:** The Python MaxEntComb code was extensively tested under Python 2.7.x. We therefore recommend this setting in 
+order to obtain the best possible results. The code also works for other version of Python >=3.6 but it has not been 
+thoroughly tested.
+
 ## Usage
 
 ### Running MaxEnt Python:
-A `maxentcomb` CLI command is added on `pip install` which runs the model. The file takes the following
+A `maxentcomb` CLI command is added on `pip install` which runs the model. The command takes the following
 parameters:
 ```text
   -h, --help                Show this help message and exit.
@@ -61,6 +65,7 @@ parameters:
 in the `weighted_lin_constr.py` file.
 
 Examples of running the Python MaxEnt model are:
+
 ```bash
 # Example 1: Outputs posterior matrix after calculation
 maxentcomb --inputgraph ./graph.edgelist --prior 'CN' 'PA' --optimizer 'newton'
@@ -90,6 +95,7 @@ weights:    LIST        The multiplicity for each high-order priximity of A.
 ```
  
 An example of running the Matlab MaxEnt version:
+
 ```bash
 ./run_test.sh /usr/local/MATLAB/MATLAB_Runtime/v95 graph.edgelist ./tr.edgelist ./te.edgelist './tr.out' './te.out' 8 100 [1,0.1]
 ``` 
@@ -135,6 +141,8 @@ match the respective installation directories and run each files as:
 **NOTE:** For AROPE a `main.py` file is required in order to run the evaluation through EvalNE. This file
 is also available in the `/experiments` folder.
 
+**NOTE2:** To ensure that the same results reported in the paper are obtained, we recommend that both MaxEnt and the EvalNE
+library are installed in independent virtual environments under Python 2.7.x.
 
 ## Citation ##
 
@@ -150,3 +158,4 @@ which is also available on [arxiv](https://arxiv.org/abs/2002.07076):
   pages={70-80},
   doi={10.1109/DSAA49011.2020.00019}}
 ```
+

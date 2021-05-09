@@ -4,11 +4,12 @@
 # Contact: alexandru.mara@ugent.be
 # Date: 29/01/2019
 
+from __future__ import absolute_import
 import time
 import argparse
 import numpy as np
 import networkx as nx
-from maxent_comb import MaxentCombined
+from maxentcomb.maxent_comb import MaxentCombined
 
 
 def parse_args():

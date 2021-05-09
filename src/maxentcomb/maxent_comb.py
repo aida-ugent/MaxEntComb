@@ -4,12 +4,12 @@
 # Contact: alexandru.mara@ugent.be
 # Date: 08/07/2019
 
+from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 import numpy as np
-from weighted_lin_constr import *
+from maxentcomb.weighted_lin_constr import *
 from tqdm import tqdm
-from sklearn.externals.joblib import Parallel, delayed
 
 
 class MaxentCombined:
